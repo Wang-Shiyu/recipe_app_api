@@ -1,0 +1,16 @@
+# Configuration File
+# Tell Travis what to do everytime we push a change
+
+language: python
+python:
+  - "3.6"
+
+services:
+  - docker
+
+before_script:
+  pip install docker-compose
+
+script:
+  # flake8 is a python linting tool, find it on pypi, put it under requirements.txt
+  - docker-compose run app sh -c "python manage.py test && flake8"
