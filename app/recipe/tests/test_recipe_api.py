@@ -98,7 +98,7 @@ class PrivateRecipeApiTest(TestCase):
         """Test viewing a recipe detail"""
         recipe = sample_recipe(self.user)
         recipe.tags.add(sample_tag(user=self.user))
-        recipe.ingredient.add(sample_ingredient(user=self.user))
+        recipe.ingredients.add(sample_ingredient(user=self.user))
 
         url = detail_url(recipe.id)
         res = self.client.get(url)
