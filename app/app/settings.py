@@ -126,5 +126,15 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
 
 STATIC_URL = '/static/'
+# 127.0.0.1:8000/static map to /static/
+# and 127.0.0.1:8000/media map to /media/
+MEDIA_URL = '/media/'
+
+MEDIA_ROOT = '/vol/web/media'
+# All static files will be dumped here when the project is built
+# django comes a command: collect static files, which collects all the static
+# files from any dependency that we have and combines them all and stores them
+# in the static root
+STATIC_ROOT = '/vol/web/static'
 
 AUTH_USER_MODEL = 'core.User' # User model in core app
